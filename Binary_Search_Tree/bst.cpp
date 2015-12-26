@@ -279,6 +279,10 @@ int BTree::minDepth(TreeNode* node) {
 		return min(minDepth(node->left),minDepth(node->right)) + 1;
 }
 
+/*Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
+*/
+
+
 BTree::TreeNode* BTree::lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
 
 if(root == NULL) {
