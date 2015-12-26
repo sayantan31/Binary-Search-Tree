@@ -2,6 +2,7 @@
 #include<cstdlib>
 #include<deque>
 #include "bst.h"
+#include<vector>
 
 using namespace std;
 
@@ -248,39 +249,32 @@ bool BTree::hasPathSum(TreeNode* node, int sum) {
 }
 
 /*
-Given a binary tree, return all root-to-leaf paths.
+Given a binary tree, find its minimum depth.
 
-
-vector<string> binaryTreePaths(TreeNode* root) {
-
-	string tmp;
-	vector<string> result;
-	
-	buildString(root, tmp, result);
-
-	return result;        
-
-}
-
-void buildString(TreeNode* node, string tmp, vector<string>& result) {
-
-	if(root == NULL) {
-		return;
-	}
-
-	if(tmp.empty()) {
-		tmp = to_string(root->val);
-	}
-	else {
-		tmp = tmp + "->" + to_string(node->val);
-	}
-
-	if(node->left == NULL && node->right == NULL) {
-		result.push_back(tmp);
-	}
-
-	buildString(node->left,tmp,result);
-	buildString(node->right,tmp,result);
-}
-
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
 */
+
+int BTree::minDepth() {
+	
+	return minDepth(root);
+}
+
+int BTree::minDepth(TreeNode* node) {
+
+	if(root == NULL){
+		
+		return 0;
+	}
+
+	if(node->left == NULL && node->right != NULL) {
+	
+		return minDepth(node->right) + 1;
+	}
+
+	if(node->right == NULL && node->left != NULL) {
+	
+		return minDepth(node->left) + 1;
+	}
+
+		return min(minDepth(node->left),minDepth(node->right)) + 1;
+}	

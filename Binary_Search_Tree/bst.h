@@ -1,6 +1,8 @@
 #ifndef _BST_H
 #define _BST_H
 
+#include<vector>
+
 class BTree {
 
 	private:
@@ -19,7 +21,8 @@ class BTree {
 		int getHeight(TreeNode* root);
 		bool isSameTreePrivate(TreeNode* p, TreeNode* q);
 		bool hasPathSum(TreeNode* node, int sum);
-	
+		int minDepth(TreeNode* node);	
+
 	public:
 		BTree();
 		void insert(int x);
@@ -29,6 +32,7 @@ class BTree {
 		bool isSameTree(BTree* tree1, BTree* tree2);
 		void printLevelByLevel();
 		bool hasPathSum(int sum);
+		int minDepth();
 
 };
 
