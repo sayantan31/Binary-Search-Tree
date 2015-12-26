@@ -266,12 +266,12 @@ int BTree::minDepth(TreeNode* node) {
 		return 0;
 	}
 
-	if(node->left == NULL && node->right != NULL) {
+	if(node->left == NULL) {
 	
 		return minDepth(node->right) + 1;
 	}
 
-	if(node->right == NULL && node->left != NULL) {
+	if(node->right == NULL) {
 	
 		return minDepth(node->left) + 1;
 	}
