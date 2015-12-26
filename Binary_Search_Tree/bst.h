@@ -33,6 +33,7 @@ class BTree {
 		void printLevelByLevel();
 		bool hasPathSum(int sum);
 		int minDepth();
+		TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q);
 
 };
 

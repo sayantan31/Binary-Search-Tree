@@ -12,8 +12,6 @@ int main() {
 	myTree1->insert(30);
 	myTree1->insert(5);
 	myTree1->insert(15);
-	myTree1->insert(25);
-	myTree1->insert(40);
 
 
 /*	BTree* myTree2 = new BTree();
@@ -50,8 +48,8 @@ int main() {
 
 		cout << "Different trees" << endl;
 	}
-	*/
-	//myTree1->printLevelByLevel();
+	
+	myTree1->printLevelByLevel();
 
 	if(myTree1->hasPathSum(90)) {
 		cout << "Has Path" << endl;
@@ -59,6 +57,7 @@ int main() {
 	else {
 		cout << "Has No Path" << endl;
 	}
-	
+	*/
+
 	return 0;
 }

@@ -277,4 +277,36 @@ int BTree::minDepth(TreeNode* node) {
 	}
 
 		return min(minDepth(node->left),minDepth(node->right)) + 1;
+}
+
+BTree::TreeNode* BTree::lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+
+if(root == NULL) {
+            return 0;
+        }
+
+        if(root == p || root == q) {
+            return root;
+        }
+
+        
+
+        TreeNode* left = lowestCommonAncestor(root->left,p,q);
+        TreeNode* right = lowestCommonAncestor(root->right,p,q);
+
+        
+
+        if(left != NULL && right != NULL) {
+            return root;
+        }
+
+        
+
+        if(left == NULL) {
+            return right;
+        }
+
+        else {
+            return left;
+        }
 }	
