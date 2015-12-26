@@ -22,6 +22,7 @@ class BTree {
 		bool isSameTreePrivate(TreeNode* p, TreeNode* q);
 		bool hasPathSum(TreeNode* node, int sum);
 		int minDepth(TreeNode* node);	
+		void printLevelOrderTraversal(TreeNode* root);
 
 	public:
 		BTree();
@@ -34,6 +35,7 @@ class BTree {
 		bool hasPathSum(int sum);
 		int minDepth();
 		TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q);
+		void printLevelOrderTraversal();
 
 };
 

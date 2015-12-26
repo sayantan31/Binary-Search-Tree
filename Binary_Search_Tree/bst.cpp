@@ -313,4 +313,42 @@ if(root == NULL) {
         else {
             return left;
         }
+}
+
+/*
+Level Order traversal in a binary tree
+*/
+
+void BTree::printLevelOrderTraversal() {
+	
+	printLevelOrderTraversal(root);
 }	
+
+
+void BTree::printLevelOrderTraversal(TreeNode* node) {
+
+	if(root == NULL) {
+		return;
+	}
+	deque<TreeNode *> queue;
+
+	queue.push_back(root);
+
+	while(!queue.empty()) {
+	
+		node = queue.at(0);
+		queue.pop_front();
+		cout << node->val << " ";
+
+		if(node->left != NULL) {
+			queue.push_back(node->left);
+		}
+	
+		if(node->right != NULL) {
+			queue.push_back(node->right);
+		}
+	}
+
+	cout << endl;
+}
+
