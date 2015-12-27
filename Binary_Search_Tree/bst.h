@@ -36,6 +36,7 @@ class BTree {
 		int minDepth();
 		TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q);
 		void printLevelOrderTraversal();
+		void iterativePreOrderTraversal();
 
 };
 

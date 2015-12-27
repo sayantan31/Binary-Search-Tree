@@ -3,6 +3,7 @@
 #include<deque>
 #include "bst.h"
 #include<vector>
+#include<stack>
 
 using namespace std;
 
@@ -359,3 +360,35 @@ void BTree::printLevelOrderTraversal(TreeNode* node) {
 	cout << endl;
 }
 
+/*
+Given a binary tree, return the preorder traversal of its nodes' values.
+*/
+
+void BTree::iterativePreOrderTraversal() {
+
+	if(root == NULL) {
+		return;
+	}
+
+	stack<TreeNode *> s1;
+
+	s1.push(root);
+
+	while(!s1.empty()) {
+	
+		TreeNode* node = s1.top();
+		s1.pop();
+		cout << node->val << " ";
+
+		if(node->right != NULL) {
+			s1.push(node->right);
+		}
+	
+		if(node->left != NULL) {
+			s1.push(node->left);
+		}
+	}
+
+	cout << endl;
+
+}
