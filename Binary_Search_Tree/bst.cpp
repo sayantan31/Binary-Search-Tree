@@ -261,22 +261,29 @@ int BTree::minDepth() {
 
 int BTree::minDepth(TreeNode* node) {
 
-	if(root == NULL){
-		
+	int left_depth = 0;
+	int right_depth = 0;
+	
+	if(root == NULL) {
 		return 0;
 	}
 
-	if(node->left == NULL) {
-	
-		return minDepth(node->right) + 1;
+	if(node->left == NULL && node->right == NULL) {
+		
+		return 1;
 	}
 
-	if(node->right == NULL) {
+	if(node->left != NULL) {
 	
-		return minDepth(node->left) + 1;
+		left_depth = minDepth(node->left);
 	}
 
-		return min(minDepth(node->left),minDepth(node->right)) + 1;
+	if(node->right != NULL) {
+	
+		right_depth = minDepth(node->right);
+	}
+
+	return 1 + min(left_depth,right_depth);
 }
 
 /*Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.

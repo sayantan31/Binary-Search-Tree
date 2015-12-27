@@ -13,6 +13,9 @@ int main() {
 	myTree1->insert(5);
 	myTree1->insert(15);
 
+	int min_depth = myTree1->minDepth();
+
+	cout << "Depth = " << min_depth << endl;
 
 /*	BTree* myTree2 = new BTree();
 
@@ -27,7 +30,7 @@ int main() {
 //	myTree1->display();
 
 
-	myTree1->printLevelOrderTraversal();	
+//	myTree1->printLevelOrderTraversal();	
 
 	return 0;
 }
